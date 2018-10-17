@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript LECTEUR MULTIMEDIA </title>
+	 <link rel="stylesheet" href="lecteur.css" />
+    <script src="lecteur.js"></script>
+</head>
+
+<body>
+	<!-- ******************************l'entete de la page**************************************** -->
+	<header id='header'>
+		<div id="tete" >
+				<img src="icone3.jpg" width="80" height="80"  alt="">
+				<div id="title">Lecteur multimédia</div>
+		</div>
+	</header><br></br>
+	<!-- *****************************le contenu de la page ************************************* -->
+	<div id='contenue'>
+		<nav id='sectionvideo'> 
+			<video id='idvideo' name='mesvideo' ontimeupdate="update(this)" width="400" height="222" >
+				<source src="src2.mp4" type="video/mp4" />
+				<source src="src1.ogg" type="video/ogg" />
+				 Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
+			</video><br>
+			<div id='progressettime'>
+				<div id="progressBarControl" background-color="blue">
+					<div id="progressBar" onclick="clickProgress(idvideo, this, event)">Pas de lecture</div>
+				</div>
+				<span id="progressTime">00:00/00:00</span>
+			</div>
+			<img src="precedent2.jpg" width="20" height="20" class="control" onclick="LecturePrecedentVideo(idvideo, tableau)">
+			<img src="play2.jpg" width="20" height="20" class="control" onclick="play('idvideo', this)">
+			<img src="next2.jpg" width="20" height="20" class="control" onclick="LectureNextVideo(idvideo, tableau)">
+			<img src="stop2.jpg" width="20" height="20" class="control" onclick="resume('idvideo')">
+			<img src="volume.jpg" width="20" height="20" class="control" >
+			<span class="volume" >
+				<a class="stick1" onclick="volume('idvideo', 0)"></a>
+				<a class="stick2" onclick="volume('idvideo', 0.3)"></a>
+				<a class="stick3" onclick="volume('idvideo', 0.5)"></a>
+				<a class="stick4" onclick="volume('idvideo', 0.7)"></a>
+				<a class="stick5" onclick="volume('idvideo', 1)"></a>
+			</span>
+		</nav>
+		<div id="learnAuto">
+			<div id="texte"> Lecture Automatique </div>
+			<button class="bouton" id="bouton" >desactiver</button>
+		</div>
+		<div id="playlist">
+			
+			<div id="enteteplaylist"><center>PlayList</center></div>
+			<!-- cest utile: https://openclassrooms.com/fr/courses/1205396-maitriser-les-tableaux-html-avec-javascript -->
+			 <!-- fait le en boucle -->
+			<table id="tableau" border>
+				<thead>
+					<tr>
+						<th style="width:10%;">#numero</th>
+						<th style="width:90%;">Titre</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>			
+		</div>
+	</div>
+
+	<!-- *********************************le pied de la page ***************************************-->
+	<br></br>
+	<footer id='footer'>
+		<div id='Divfooter'>
+			Ce TP est réalisé par <a href="https://www.linkedin.com/in/sagar-gueye-94b383141/">Sagar GUEYE</a>
+			, étudiante en deuxieme année à <a href="http://iut.univ-lyon1.fr/">l'IUT Lyon1.</a>
+		</div>
+	</footer>
+</body>
+
+</html>
